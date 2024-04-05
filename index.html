@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;">Photo Gallery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </nav>
+    <h2 style="font-family: 'Times New Roman', Times, serif; margin-top: 50px; text-align: center;">New York City Photos</h2>
+    <h6 style="color: gray; font-weight: 100; text-align: center;">click the photo that you liked and see where is there!</h6>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc1.jpg" width="400px" height="300px" id="photo1">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc2.jpg" width="400px" height="300px" id="photo2">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc3.jpg" width="400px" height="300px" id="photo3">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc4.jpg" width="400px" height="300px" id="photo4">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc5.jpg" width="400px" height="300px" id="photo5">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc6.jpg" width="400px" height="300px" id="photo6">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc7.jpg" width="400px" height="300px" id="photo7">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc8.jpg" width="400px" height="300px" id="photo8">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc9.jpg" width="400px" height="300px" id="photo9">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc10.jpg" width="400px" height="300px" id="photo10">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc11.jpg" width="400px" height="300px" id="photo11">
+            </div>
+            <div class="col-4 p-3 border">
+                <img src="images/photo-nyc12.jpg" width="400px" height="300px" id="photo12">
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        let photoEl = document.querySelectorAll('[id^="photo"]');
+        let modalBody = document.querySelector('.modal-body');
+
+        for (let i = 0; i < photoEl.length; i++) {
+            photoEl[i].addEventListener('click', function () {
+                modalBody.innerHTML = '<img src="' + this.src + '" class="d-block w-100" alt="Photo">';
+                const modal = new bootstrap.Modal(document.querySelector('.modal'));
+                modal.show();
+            });
+        }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <div class="container">
+        <div class="row justify-content-center mt-4">
+            <div class="col-6 mt-5">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" aria-label="Slide 1" aria-current="true" class="active"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/photo-nyc1.jpg" class="d-block w-100" id="carousel-item-1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc2.jpg" class="d-block w-100" id="carousel-item-2">
+                        </div>
+                        <div class="carousel-item" >
+                            <img src="images/photo-nyc3.jpg" class="d-block w-100" id="carousel-item-3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc4.jpg" class="d-block w-100" id="carousel-item-4">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc5.jpg" class="d-block w-100" id="carousel-item-5">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc6.jpg" class="d-block w-100" id="carousel-item-6">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc7.jpg" class="d-block w-100" id="carousel-item-7">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc8.jpg" class="d-block w-100" id="carousel-item-8">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc9.jpg" class="d-block w-100" id="carousel-item-9">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/photo-nyc10.jpg" class="d-block w-100" id ="carousel-item-10">
+                        </div>
+                    </div>
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const items =document.querySelectorAll('.carousel-item');
+        carouselItems.forEach(function (item, index) {
+            item.addEventListener('click', function () {
+                const modalTitle = document.querySelector('.modal-title');
+                const modalBody = document.querySelector('.modal-body');
+
+                // Modal başlığını ve içeriğini güncelle
+                modalTitle.textContent = 'Slide ' + (index + 1);
+                modalBody.innerHTML = '<img src="images/photo-nyc' + (index + 1) + '.jpg" class="d-block w-100" alt="...">';
+
+                // Modalı göster
+                const modal = new bootstrap.Modal(document.querySelector('.modal'));
+                modal.show();
+            });
+        });
+
+    </script> -->
+</body>
+</html>
